@@ -1,0 +1,31 @@
+[project]
+name = "rdclipper"
+version = "0.1.0"
+description = "Monitor clipboard for hoster and magnet links and automatically unrestrict with real-debrid"
+readme = "README.md"
+authors = [
+    { name = "Elias", email = "jadeaffenjaeger@gmx.net" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "click>=8.1.7",
+    "clipman>=3.3.1",
+    "loguru>=0.7.2",
+    "magnet-parser>=0.1.1",
+    "python-dotenv>=1.0.1",
+    "rd-api-py>=0.4.0",
+]
+
+[project.scripts]
+rdclip = "rdclipper.rddownload:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[dependency-groups]
+dev = [
+    "ipykernel>=6.29.5",
+    "mypy>=1.13.0",
+    "ruff>=0.7.4",
+]
